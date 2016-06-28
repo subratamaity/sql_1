@@ -1,1 +1,4 @@
-1.to show the manager name , whose salary is more than 1500
+1.to show the manager name ,id, whose salary is more than 1500
+between min_salary and max_salary.
+
+2.
