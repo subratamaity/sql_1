@@ -2,14 +2,14 @@ create table countries(
 country_id varchar(2) not null,region_id number(20)
 );
 
-create table dept_1(
+create table dept(
 dept_id number(4) not null,dept_name varchar(30) not null,manager_id number(10),location_id number(10)
 );
 
-create table employee (
-employee_id number(10)
-first_name varchar2(15),
-last_name varchar2(10),
+create table employee_1190676 (
+employee_id number(10),
+first_name varchar(15),
+last_name varchar(10),
 email varchar(20) not NULL,
 phone_no number(10),
 job_id varchar2(10),
@@ -19,7 +19,7 @@ manager_id number(10),
 dept_id number(05)
 );
 
-createre table jobs(
+create table jobs(
 job_id varchar2(10),job_title varchar(35),min_salary number(6),max_salary number(6)
 );
 
@@ -40,11 +40,22 @@ create table regions(
 region_id number(20) not null,region_name varchar2(25)
 );
 
+
+
+
+
+
+
+
+
+
+
+
 describe countries;
 
-describe department;
+describe dept;
 
-describe employee;
+describe employee_1190676;
 
 describe jobs;
 
@@ -55,6 +66,9 @@ describe job_history;
 describe locations;
 
 describe regions;
+
+
+ 
 
 commit;
 
