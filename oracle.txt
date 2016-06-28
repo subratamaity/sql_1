@@ -1,0 +1,141 @@
+create table employees_1191226
+(employee_id number(6) not null,
+first_name varchar2(20),
+last_name varchar2(25) not null,
+email varchar2(30) not null,
+phone_number number(10),
+hire_date date not null,
+job_id varchar2(20) not null,
+salary number(10,2),
+commission_pct number(10,2),
+manager_id number(10),
+department_id number(10));
+
+insert into emp_1191226(employee_id,first_name,last_name,email,phone_number,hire_date,job_id,salary,commission_pct,manager_id,dept_id)values(&employee_id,'&first_name','&last_name','&email',&phone_number,'&hire_date','&job_id',&salary,&commission_pct,&manager_id,&dept_id);
+
+
+insert into table emp_1191226(employee_id,first_name,last_name,email,phone_number,hire_date,job_id,salary,commission_pct,manager_id,dept_id)values(&employee_id,'&first_name','&last_name','&email',&phone_number,'&hire_date','&job_id',&salary,&commission_pct,&manager_id,&dept_id);
+insert into table emp_1191226(employee_id,first_name,last_name,email,phone_number,hire_date,job_id,salary,commission_pct,manager_id,department_id)values(111,'meghalee','dey','1234@gmail.com',9087858716,'16-JUN-2016','AN01',289896.87,4353.12,011,01);
+
+insert into emp_1191226(employee_id,first_name,last_name,email,phone_number,hire_date,job_id,salary,commission_pct,manager_id,dept_id)values(111,'meghalee','dey','1234@gmail.com',9087858716,'16-JUN-2016','AN01',289896.87,4353.12,011,01);
+commit;
+
+
+update emp_1191226 set first_name="tarun" where employee_id=222;
+
+
+
+
+
+select last_name,salary from emp_1191226 where salary NOT IN (SELECT salary FROM emp_1191226 where salary between 235 and 34433.23);
+
+
+select last_name,salary from emp_1191226 where (salary between 0 and 235) or salary >34433.23;
+
+select last_name,salary from emp_1191226 where salary NOT IN (SELECT salary FROM emp_1191226 where salary between 235 and 34433.23);
+
+
+select lower('SQL COURSE')LOWERCGH FROM DUAL;
+select CONCAT('SQL COURSE','HBDF')LOWERCGH FROM DUAL;
+
+SELECT SYSDATE FROM DUAL;
+SELECT MONTHS_BETWEEN('01-SEP-95','11-JAN-94')FROM DUAL;
+SELECT ROUND(MONTHS_BETWEEN('01-SEP-95','11-JAN-94'),0)FROM DUAL;
+SELECT ROUND(SYSDATE,'MONTH') FROM DUAL;
+
+NVL
+
+
+
+
+create table countries
+(country_id varchar2(2) not null,
+country_name varchar2(40),
+region_id number(12));
+
+
+
+
+create jobs
+(job_id varchar2(10) not null,
+job_title varchar2(35) not null,
+min_salary number(6),
+max_salary number(6));
+
+
+
+
+
+
+create table job_grades
+(grade_level varchar2(3),
+lowest_sal number(6),
+highest_salary number(6));
+
+
+
+
+
+
+create table job_history
+(employee_id number(6) not null,
+start_date date not null,
+end_date date not null,
+job_id varchar2(10) not null,
+dept_id number(4));
+
+
+
+
+
+create table locations
+(location_id number(4) not null,
+street_address varchar2(40),
+postal_code varchar2(12) not null,
+city varchar2(30) not null,
+state_province varchar2(25),
+country_id varchar2(2));
+
+
+
+
+
+
+
+
+
+select d.department_id,d.location_id,e.salary,e.job_id from emp_1191226 e, dept_1191226 d where e.dept_id=d.dept_id and d.location_id=456;
+
+
+select count(*) from emp_119226 where last_name like '%y';//last name has n at the end
+
+select count(*) from emp_1191226 where last_name like '%y%';//last name has n at any position
+
+
+
+
+select count(manager_id) "NUMBER OF MANAGERS" from emp_1191226;//COUNT MANAGER ID THAT ARE THERE FOR SOME MANAGERS WHICH ARE NOT THERE IN THE EMP_TABLE
+
+
+
+
+
+insert into jobgrades_1191226(grade_level, lowest_sal, highest_sal) values ('&grade_level', &lowest_sal, &highest_sal);
+commit;
+
+
+
+
+select * from e.first_name "employee name",j.grade_level,e.first_name "manager_name" in (select e.first_name from emp_1191226 e, jobgrades_1191226 j  where e.manager_id=e.employee_id and e.salary>15000 and e.salary between j.lowest_sal and j.highest_sal) from emp_1191226 e, jobgrades_1191226 j;
+
+
+
+
+
+
+select e.first_name,m.first_name,m.salary,j.grade_level
+from employee e,employee j,job_grade j where e.employee_id=m.employee_id and m.salary>15000 and m.salary between j.lowest_sal and j.highest_sal;
+
+
+
+
